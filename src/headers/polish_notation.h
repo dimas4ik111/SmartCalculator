@@ -7,9 +7,7 @@
 #include <math.h>
 #include "stack.h"
 
-#define NUM_STR "123456789"
-#define DOUBLE_STR "123456789."
-
 int s21_polish_notation(char* buf);
+int is_it_num(const char *str);
 
 #endif  // SRC_HEADERS_POLISH_NOTATION_H_

@@ -12,7 +12,7 @@ int push(list **head, double num, char* operand) {
 list* pop(list **head) {
     list *out;
     if ((*head) == NULL)
-        return -1;
+        return NULL;
     out = *head;
     *head = (*head)->next;
     return out;
@@ -20,13 +20,13 @@ list* pop(list **head) {
 
 char* peek_operand(const list *head) {
     if (head == NULL)
-        return -1;
+        return 0;
     return head->operand;
 }
 
 double peek_num(const list *head) {
     if (head == NULL)
-        return -1;
+        return 0;
     return head->num;
 }
 
