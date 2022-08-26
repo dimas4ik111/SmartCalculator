@@ -1,33 +1,33 @@
 #include "../headers/stack.h"
 
-int push(list **head, double num, char* operand) {
+void push(list **head, char* buf) {
     list *tmp = calloc(1, sizeof(list));
-    if (tmp == NULL)
-        return -1;
-    tmp->num = num;
-    tmp->operand = operand;
+    tmp->next = *head;
+    tmp->lex = buf;
     *head = tmp;
 }
 
-list* pop(list **head) {
+
+char* pop(list **head) {
     list *out;
-    if ((*head) == NULL)
-        return NULL;
+    char* value;
     out = *head;
     *head = (*head)->next;
-    return out;
+    value = out->lex;
+    free(out);
+    return value;
 }
 
-char* peek_operand(const list *head) {
+char* peek_lex(const list *head) {
     if (head == NULL)
         return 0;
-    return head->operand;
+    return head->lex;
 }
 
-double peek_num(const list *head) {
+int peek_priority(const list *head) {
     if (head == NULL)
         return 0;
-    return head->num;
+    return head->priority;
 }
 
 size_t get_size_stack(const list *head) {
