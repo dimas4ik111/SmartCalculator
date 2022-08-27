@@ -7,7 +7,6 @@ void push(list **head, char* buf) {
     *head = tmp;
 }
 
-
 char* pop(list **head) {
     list *out;
     char* value;
@@ -28,13 +27,4 @@ int peek_priority(const list *head) {
     if (head == NULL)
         return 0;
     return head->priority;
-}
-
-size_t get_size_stack(const list *head) {
-    size_t size = 0;
-    while (head) {
-        size++;
-        head = head->next;
-    }
-    return size;
 }

@@ -15,4 +15,3 @@ void push(list **head, char* buf);
 char* pop(list **head);
 char* peek_lex(const list *head);
 int peek_priority(const list *head);
-size_t get_size_stack(const list *head);

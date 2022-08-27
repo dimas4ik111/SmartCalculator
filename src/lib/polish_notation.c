@@ -4,10 +4,13 @@ int s21_polish_notation(char* str){
     if (str == NULL)
         return ERROR;
     int err = 0;
+    int check = 0;
+    int exit_index = strlen(str) - 1;
     while (*str != '\0') {
         if (is_it_num(str) > 0) {  // check on number
             int len = is_it_num(str);
             if (len == ERROR) {
+                err = -1;
                 printf("ERROR CONTEXT\n");
                 break;
             }
@@ -17,7 +20,13 @@ int s21_polish_notation(char* str){
             printf("buf = %s\n", buf);
             free(buf);
             str += len;
+            check += len;
         } else if (is_it_operand(str) > 0) {  // check on operand
+            if (check == exit_index) {
+                err = -1;
+                break;
+            }
+
             int len = is_it_operand(str);
             if (len > 3) {
                 char* buf;
@@ -26,18 +35,26 @@ int s21_polish_notation(char* str){
                 printf("buf = %s\n", buf);
                 free(buf);
                 str += len;
+                check += len;
             } else {  // check on close ')'
                 printf("buf = %c\n", *str);
                 str++;
+                check++;
             }
         } else if (is_it_operand(str) == 0) {
             printf("buf = )\n");
             str++;
+            check++;
         } else {
+            if (check == 0 || check == exit_index) {
+                err = -1;
+                break;
+            }
             str++;
+            check++;
         }
     }
-    return 1;
+    return err;
 }
 
 int is_it_num(const char *str) {
