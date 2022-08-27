@@ -4,57 +4,104 @@ int s21_polish_notation(char* str){
     if (str == NULL)
         return ERROR;
     int err = 0;
-    int check = 0;
-    int exit_index = strlen(str) - 1;
-    while (*str != '\0') {
-        if (is_it_num(str) > 0) {  // check on number
-            int len = is_it_num(str);
-            if (len == ERROR) {
-                err = -1;
-                printf("ERROR CONTEXT\n");
-                break;
-            }
-            char* buf;
-            buf = calloc(1, sizeof(char) * len);
-            strncpy(buf, str, len);
-            printf("buf = %s\n", buf);
-            free(buf);
-            str += len;
-            check += len;
-        } else if (is_it_operand(str) > 0) {  // check on operand
-            if (check == exit_index) {
-                err = -1;
-                break;
-            }
-
-            int len = is_it_operand(str);
-            if (len > 3) {
-                char* buf;
-                buf = calloc(1, sizeof(char) * len);
-                strncpy(buf, str, len);
-                printf("buf = %s\n", buf);
-                free(buf);
-                str += len;
-                check += len;
-            } else {  // check on close ')'
-                printf("buf = %c\n", *str);
-                str++;
-                check++;
-            }
-        } else if (is_it_operand(str) == 0) {
-            printf("buf = )\n");
+    int stop = strlen(str);
+    list *work = NULL;
+    list *oper = NULL;
+    int prev_oper = 0;
+    for (size_t i = 0; i < stop;) {
+        printf("*str = %c\n", *str);
+        if (((prev_oper && *str == '-') || (i == 0 && *str == '-')) && is_it_num(str + 1) > 0) {
             str++;
-            check++;
-        } else {
-            if (check == 0 || check == exit_index) {
-                err = -1;
-                break;
-            }
-            str++;
-            check++;
+            push_num(str, &work, is_it_num(str), 1);
+            str += is_it_num(str);
+            prev_oper = 0;
+        } else if (is_it_num(str) > 0) {
+            push_num(str, &work, is_it_num(str), 0);
+            str += is_it_num(str);
+            prev_oper = 0;
+        } else if (is_it_operand(str) > 0 && i != stop - 1) {
+            err = work_with_oper(str, &work, &oper);
+            prev_oper = 1;
+            str += err;
+            i += err - 1;
+        } else if (*str != '\0') {
+            i = stop;
+            err = -1;
+        } else if (*str == '\0') {
+            i = stop;
+        }
+        if (err == -1) {
+            i = stop;
         }
     }
+    printf("peek = %s\n", peek_lex(work));
     return err;
+}
+
+int work_with_oper(const char *str, list **work, list **oper) {
+    char* buf = NULL;
+    int result = 0;
+    if (*str == '(') {
+        push(oper, "(");
+        (*oper)->priority = 0;
+        result = 1;
+    } else if (*str == ')') {
+        while (peek_lex(*oper) != "(") {
+            push(work, pop(oper));
+        }
+        result = 1;
+    } else if (peek_lex(*oper) == NULL) {
+        buf = calloc(1, sizeof(char) * is_it_operand(str));
+        strncpy(buf, str, is_it_num(str));
+        push(oper, buf);
+        (*oper)->priority = priority_oper(buf);
+        result = is_it_num(str);
+        free(buf);
+    } else if (peek_lex(*oper) != NULL) {  // wich oper have hight priority
+        buf = calloc(1, sizeof(char) * is_it_operand(str));
+        strncpy(buf, str, is_it_num(str));
+        int prio_buf = priority_oper(buf);
+        if (prio_buf > peek_priority(*work)) {
+            push(oper, buf);
+            (*oper)->priority = prio_buf;
+        } else {
+            push(work, pop(work));
+            push(oper, buf);
+            (*oper)->priority = prio_buf;
+        }
+        free(buf);
+    }
+    return result;
+}
+
+int priority_oper(char *buf) {
+    int res = 0;
+    if (*buf == '+' || *buf == '-') {
+        res = 1;
+    } else if (*buf == '*' || *buf == '/' || *buf == '%') {
+        res = 2;
+    } else if (buf == "sin(" || buf == "cos(" || buf == "tan(" ||
+        buf == "asin(" || buf == "acos(" || buf == "atan(") {
+        res = 3;
+    } else if (*buf == '^') {
+        res = 4;
+    }
+    return res;
+}
+
+void push_num(char* str, list **work, int len, int unary_minus) {
+    char *buf = calloc(1, sizeof(char) * (len + unary_minus));
+    if (unary_minus) {
+        strncpy(buf, str, len);
+        double f = 0.0;
+        f = atof(buf);
+        f = -f;
+        sprintf(buf, "%f", f);
+    } else {
+        strncpy(buf, str, len);
+    }
+    push(work, buf);
+    free(buf);
 }
 
 int is_it_num(const char *str) {
@@ -75,15 +122,10 @@ int is_it_num(const char *str) {
 }
 
 int is_it_operand(const char *str) {
-    int result = ERROR;
-    if (*str == '+' || *str == '-') {
+    int result = 0;
+    if (*str == '+' || *str == '-' || *str == '(' || *str == ')' ||
+        *str == '*' || *str == '/' || *str == '%' || *str == '^') {
         result = 1;
-    } else if (*str == '*' || *str == '/' || *str == '%') {
-        result = 2;
-    } else if (*str == '^') {
-        result = 3;
-    } else if (*str == ')') {
-        result = 0;
     } else {
         result = is_it_trigonometry(str);
     }
