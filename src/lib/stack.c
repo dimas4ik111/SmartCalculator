@@ -1,26 +1,34 @@
 #include "../headers/stack.h"
 
-void push(list **head, char* buf) {
+void push(list **head, double num, int oper, int prio) {
     list *tmp = calloc(1, sizeof(list));
     tmp->next = *head;
-    tmp->lex = buf;
+    tmp->num = num;
+    tmp->operand = oper;
+    tmp->priority = prio;
     *head = tmp;
 }
 
-char* pop(list **head) {
+double pop(list **head) {
     list *out;
-    char* value;
+    double value;
     out = *head;
     *head = (*head)->next;
-    value = out->lex;
+    value = out->num;
     free(out);
     return value;
 }
 
-char* peek_lex(const list *head) {
+double peek_num(const list *head) {
     if (head == NULL)
         return 0;
-    return head->lex;
+    return head->num;
+}
+
+int peek_oper(const list *head) {
+    if (head == NULL)
+        return 0;
+    return head->operand;
 }
 
 int peek_priority(const list *head) {

@@ -1,5 +1,5 @@
 CC = gcc
-# CFLAGS = -Wall -Werror -Wextra -pedantic
+CFLAGS = -Wall -Werror -Wextra -pedantic
 SRC = lib/*.c
 
 main :
