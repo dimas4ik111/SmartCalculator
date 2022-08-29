@@ -7,32 +7,54 @@ int s21_polish_notation(char* str){
     int stop = strlen(str);
     list *work = NULL;
     list *oper = NULL;
-    int prev_oper = 0;
-    for (size_t i = 0; i < stop;) {
-        if (is_it_num(str) > 0) {
+    int num_counter = 0;
+    int oper_counter = 0;
+    int x_counter = 0;
+    int br_counter = 0;
+    for (int i = 0; i < stop;) {
+        if (*str == '(' || *str == ')')
+            br_counter++;
+        if (*str == 'x') {
+            push(&work, 0, 0, 999);
+            x_counter++;
+            str++;
+            i++;
+        } else if (is_it_num(str) > 0) {
             i += is_it_num(str);
             push_num(str, &work, is_it_num(str), 0);
             str += is_it_num(str);
-            prev_oper = 0;
-        } else if (is_it_operand(str) > 0 && i != stop - 1 && (i != 0 || is_it_trigonometry(str) > 0)) {
-            err = work_with_oper(str, &work, &oper);
-            str += is_it_operand(str);
-            i += is_it_operand(str);
-            prev_oper = 1;
+            num_counter++;
+        } else if (is_it_operand(str) > 0) {
+            if (error_operand(str, i, stop - 1)) {
+                err = -1;
+            } else {
+                err = work_with_oper(str, &work, &oper);
+                str += is_it_operand(str);
+                i += err;
+                oper_counter++;
+            }
+        } else if (*str == ' ') {
+            str++;
+            i++;
         } else if (*str == '\0') {
             i = stop;
         } else {
-            break;
+            err = -1;
         }
+
         if (err == -1) {
-            i = stop;
+            break;
         }
     }
     while (oper) {
         push(&work, peek_num(oper), peek_oper(oper), 0);
         pop(&oper);
     }
-    print_polish(work);
+    if ((oper_counter == 0 || num_counter == 0 || br_counter % 2 != 0) && x_counter == 0) {
+        err = -1;
+    } else {
+        print_polish(work);
+    }
     return err;
 }
 
@@ -43,8 +65,7 @@ int work_with_oper(const char *str, list **work, list **oper) {
         push(oper, 0, OPEN_BR, 0);
         result = 1;
     } else if (*str == ')') {
-        while ((peek_oper(*oper) != OPEN_BR) && (peek_oper(*oper) < SIN
-            || peek_oper(*oper) > ATAN) && peek_oper(*oper) != SQRT) {
+        while (peek_oper(*oper) != OPEN_BR) {
             push(work, 0, peek_oper(*oper), (*oper)->priority);
             pop(oper);
         }
@@ -55,11 +76,14 @@ int work_with_oper(const char *str, list **work, list **oper) {
         strncpy(buf, str, is_it_operand(str));
         int prio_buf = priority_oper(buf);
         if (prio_buf > peek_priority(*oper) || *oper == NULL) {
-            // printf("buf = %s  peek(op) = %d   prio = %d\n", buf, peek_oper(*oper), peek_priority(*oper));
             push(oper, 0, wich_opearnd(buf), prio_buf);
         } else {
-            push(work, 0, peek_oper(*oper), peek_priority(*oper));
-            pop(oper);
+            while (prio_buf <= peek_priority(*oper) && *oper != NULL) {
+                if (peek_oper(*oper) == OPEN_BR)
+                    break;
+                push(work, 0, peek_oper(*oper), peek_priority(*oper));
+                pop(oper);
+            }
             push(oper, 0, wich_opearnd(buf), prio_buf);
         }
         free(buf);
@@ -101,6 +125,9 @@ int wich_opearnd(char* buf) {
 
 int priority_oper(char *buf) {
     int res = 0;
+    if (strlen(buf) > 1)
+        while (*buf == ' ')
+            buf++;
     if (*buf == '+' || *buf == '-') {
         res = 1;
     } else if (*buf == '*' || *buf == '/' || *buf == '%') {
@@ -174,13 +201,16 @@ void print_polish(list *head) {
     printf("\n\nNOTATION:\n");
     list *stack = NULL;
     while (head) {
-        push(&stack, peek_num(head), peek_oper(head), 0);
+        push(&stack, peek_num(head), peek_oper(head), peek_priority(head));
         pop(&head);
     }
-    // printf("num = %f   oper = %d\n", peek_num(stack), peek_oper(stack));
     while (stack) {
         if (peek_oper(stack) == 0) {
-            printf("%d ", (int)peek_num(stack));
+            if (peek_priority(stack) == 999) {
+                printf("x ");
+            } else {
+                printf("%d ", (int)peek_num(stack));
+            }
         } else {
             switch(peek_oper(stack)) {
                 case PLUS:
@@ -227,4 +257,14 @@ void print_polish(list *head) {
         pop(&stack);
     }
     printf("\n");
+}
+
+int error_operand(const char *buf, int i, int stop_val) {
+    int res = 0;
+    if (i == 0 && is_it_trigonometry(buf) < 0 && *buf != '-' && strstr(buf, "sqrt") != NULL) {
+        res = 1;
+    } else if (i == stop_val && *buf != ')') {
+        res = 1;
+    }
+    return res;
 }

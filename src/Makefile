@@ -3,7 +3,7 @@ CFLAGS = -Wall -Werror -Wextra -pedantic
 SRC = lib/*.c
 
 main :
-	$(CC) $(SRC) main.c -o test.out
+	$(CC) $(CFLAGS) $(SRC) main.c -o test.out
 
 clean :
 	rm -rf *.out

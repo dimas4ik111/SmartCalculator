@@ -18,5 +18,6 @@ int work_with_oper(const char *str, list **work, list **oper);
 int priority_oper(char *buf);
 int wich_opearnd(char* buf);
 void print_polish(list *stack);
+int error_operand(const char *buf, int i, int stop_val);
 
 #endif  // SRC_HEADERS_POLISH_NOTATION_H_
