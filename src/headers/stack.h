@@ -27,7 +27,8 @@ enum opers {
     POW = 12,
     SQRT = 13,
     OPEN_BR = 14,
-    CLOSE_BR = 15
+    CLOSE_BR = 15,
+    UNARY_MIN = 16
 };
 
 void push(list **head, double num, int oper, int prio);
