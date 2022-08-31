@@ -922,6 +922,8 @@ CMakeFiles/calc.dir/main.cpp.o: /Users/osgreywi/Desktop/git_hub_my/smartcalc/src
   /usr/local/include/QtGui/qkeysequence.h \
   /usr/local/include/QtWidgets/qtabwidget.h \
   /usr/local/include/QtGui/qicon.h \
+  /Users/osgreywi/Desktop/git_hub_my/smartcalc/src/headers/polish_notation.h \
+  /Users/osgreywi/Desktop/git_hub_my/smartcalc/src/headers/stack.h \
   /usr/local/lib/QtWidgets.framework/Headers/QApplication \
   /usr/local/lib/QtWidgets.framework/Headers/qapplication.h \
   /usr/local/include/QtCore/qcoreapplication.h \
@@ -943,6 +945,8 @@ CMakeFiles/calc.dir/main.cpp.o: /Users/osgreywi/Desktop/git_hub_my/smartcalc/src
   /usr/local/include/QtCore/qvariant.h \
   /usr/local/include/QtGui/qguiapplication_platform.h
 
+
+/Users/osgreywi/Desktop/git_hub_my/smartcalc/src/headers/stack.h:
 
 /Users/osgreywi/Desktop/git_hub_my/smartcalc/src/calc/main.cpp:
 
@@ -1205,6 +1209,8 @@ calc_autogen/include/ui_calculator.h:
 /usr/local/include/QtCore/qmetatype.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__bits:
+
+/Users/osgreywi/Desktop/git_hub_my/smartcalc/src/headers/polish_notation.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_pthread/_pthread_mutex_t.h:
 

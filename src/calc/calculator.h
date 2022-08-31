@@ -2,9 +2,12 @@
 #define CALCULATOR_H
 
 #include <QMainWindow>
+#include "../headers/polish_notation.h"
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class calculator; }
+namespace Ui {
+class calculator;
+}
 QT_END_NAMESPACE
 
 class calculator : public QMainWindow

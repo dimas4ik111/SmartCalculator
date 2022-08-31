@@ -1,6 +1,6 @@
 #include "../headers/polish_notation.h"
 
-double calculator(list *stack) {
+double calculator_algorithm(list *stack) {
     list *head = NULL;
     list *work = NULL;
     double res = 0;

@@ -280,6 +280,8 @@ CMakeFiles/calc.dir/main.cpp.o: \
   /usr/local/include/QtGui/qkeysequence.h \
   /usr/local/include/QtWidgets/qtabwidget.h \
   /usr/local/include/QtGui/qicon.h \
+  /Users/osgreywi/Desktop/git_hub_my/smartcalc/src/calc/../headers/polish_notation.h \
+  /Users/osgreywi/Desktop/git_hub_my/smartcalc/src/calc/../headers/stack.h \
   /usr/local/lib/QtWidgets.framework/Headers/QApplication \
   /usr/local/lib/QtWidgets.framework/Headers/qapplication.h \
   /usr/local/include/QtCore/qcoreapplication.h \

@@ -12,4 +12,3 @@ calculator::~calculator()
 {
     delete ui;
 }
-

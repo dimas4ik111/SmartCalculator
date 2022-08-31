@@ -63,7 +63,7 @@ int s21_polish_notation(char* str){
         err = -1;
     } else {
         // print_polish(work);
-        calculator(work);
+        calculator_algorithm(work);
     }
     return err;
 }
@@ -90,11 +90,17 @@ int work_with_oper(const char *str, list **work, list **oper, int unary_minus) {
         if (prio_buf > peek_priority(*oper) || *oper == NULL) {
             push(oper, 0, wich_opearnd(buf), prio_buf);
         } else {
-            while (prio_buf <= peek_priority(*oper) && *oper != NULL && wich_opearnd(buf) != peek_oper(*oper)) {
+            int flag = 1;
+            while (prio_buf <= peek_priority(*oper) && *oper != NULL && flag) {
                 if (peek_oper(*oper) == OPEN_BR)
                     break;
-                push(work, 0, peek_oper(*oper), peek_priority(*oper));
-                pop(oper);
+                if (wich_opearnd(buf) == POW && peek_oper(*oper) == POW) {
+                    flag = 0;
+                }
+                if (flag == 1) {
+                    push(work, 0, peek_oper(*oper), peek_priority(*oper));
+                    pop(oper);
+                }
             }
             push(oper, 0, wich_opearnd(buf), prio_buf);
         }
