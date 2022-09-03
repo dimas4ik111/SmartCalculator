@@ -291,7 +291,9 @@ CMakeFiles/calc.dir/calc_autogen/mocs_compilation.cpp.o: calc_autogen/mocs_compi
   /usr/local/include/QtGui/qbitmap.h \
   /usr/local/include/QtGui/qkeysequence.h \
   /usr/local/include/QtWidgets/qtabwidget.h \
-  /usr/local/include/QtGui/qicon.h
+  /usr/local/include/QtGui/qicon.h \
+  /Users/osgreywi/Desktop/git_hub_my/smartcalc/src/headers/polish_notation.h \
+  /Users/osgreywi/Desktop/git_hub_my/smartcalc/src/headers/stack.h
 
 CMakeFiles/calc.dir/calculator.cpp.o: /Users/osgreywi/Desktop/git_hub_my/smartcalc/src/calc/calculator.cpp \
   /Users/osgreywi/Desktop/git_hub_my/smartcalc/src/calc/calculator.h \
@@ -583,6 +585,8 @@ CMakeFiles/calc.dir/calculator.cpp.o: /Users/osgreywi/Desktop/git_hub_my/smartca
   /usr/local/include/QtGui/qkeysequence.h \
   /usr/local/include/QtWidgets/qtabwidget.h \
   /usr/local/include/QtGui/qicon.h \
+  /Users/osgreywi/Desktop/git_hub_my/smartcalc/src/headers/polish_notation.h \
+  /Users/osgreywi/Desktop/git_hub_my/smartcalc/src/headers/stack.h \
   calc_autogen/include/ui_calculator.h \
   /usr/local/include/QtCore/QVariant \
   /usr/local/lib/QtCore.framework/Headers/qvariant.h \
@@ -620,10 +624,6 @@ CMakeFiles/calc.dir/calculator.cpp.o: /Users/osgreywi/Desktop/git_hub_my/smartca
   /usr/local/include/QtGui/qpen.h \
   /usr/local/include/QtGui/qtextoption.h \
   /usr/local/include/QtWidgets/QMainWindow \
-  /usr/local/include/QtWidgets/QMenuBar \
-  /usr/local/lib/QtWidgets.framework/Headers/qmenubar.h \
-  /usr/local/include/QtWidgets/qmenu.h \
-  /usr/local/include/QtGui/qaction.h \
   /usr/local/include/QtWidgets/QPushButton \
   /usr/local/lib/QtWidgets.framework/Headers/qpushbutton.h \
   /usr/local/include/QtWidgets/qabstractbutton.h \
@@ -946,8 +946,6 @@ CMakeFiles/calc.dir/main.cpp.o: /Users/osgreywi/Desktop/git_hub_my/smartcalc/src
   /usr/local/include/QtGui/qguiapplication_platform.h
 
 
-/Users/osgreywi/Desktop/git_hub_my/smartcalc/src/headers/stack.h:
-
 /Users/osgreywi/Desktop/git_hub_my/smartcalc/src/calc/main.cpp:
 
 /usr/local/include/QtWidgets/QWidget:
@@ -957,10 +955,6 @@ CMakeFiles/calc.dir/main.cpp.o: /Users/osgreywi/Desktop/git_hub_my/smartcalc/src
 /usr/local/include/QtWidgets/qabstractbutton.h:
 
 /usr/local/lib/QtWidgets.framework/Headers/qpushbutton.h:
-
-/usr/local/include/QtGui/qaction.h:
-
-/usr/local/include/QtWidgets/QMenuBar:
 
 /usr/local/include/QtGui/qtextoption.h:
 
@@ -999,6 +993,8 @@ CMakeFiles/calc.dir/main.cpp.o: /Users/osgreywi/Desktop/git_hub_my/smartcalc/src
 /usr/local/include/QtWidgets/QPushButton:
 
 calc_autogen/include/ui_calculator.h:
+
+/Users/osgreywi/Desktop/git_hub_my/smartcalc/src/headers/stack.h:
 
 /usr/local/include/QtWidgets/QStatusBar:
 
@@ -1098,8 +1094,6 @@ calc_autogen/include/ui_calculator.h:
 
 /usr/local/include/QtCore/qrefcount.h:
 
-/usr/local/include/QtWidgets/qmenu.h:
-
 /usr/local/include/QtCore/qstringview.h:
 
 /usr/local/include/QtCore/qchar.h:
@@ -1135,8 +1129,6 @@ calc_autogen/include/ui_calculator.h:
 /usr/local/include/QtCore/qconfig.h:
 
 /usr/local/include/QtCore/qflags.h:
-
-/usr/local/lib/QtWidgets.framework/Headers/qmenubar.h:
 
 /usr/local/include/QtCore/qlogging.h:
 

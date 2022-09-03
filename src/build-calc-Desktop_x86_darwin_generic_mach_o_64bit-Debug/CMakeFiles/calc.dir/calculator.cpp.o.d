@@ -280,6 +280,8 @@ CMakeFiles/calc.dir/calculator.cpp.o: \
   /usr/local/include/QtGui/qkeysequence.h \
   /usr/local/include/QtWidgets/qtabwidget.h \
   /usr/local/include/QtGui/qicon.h \
+  /Users/osgreywi/Desktop/git_hub_my/smartcalc/src/calc/../headers/polish_notation.h \
+  /Users/osgreywi/Desktop/git_hub_my/smartcalc/src/calc/../headers/stack.h \
   /Users/osgreywi/Desktop/git_hub_my/smartcalc/src/build-calc-Desktop_x86_darwin_generic_mach_o_64bit-Debug/calc_autogen/include/./ui_calculator.h \
   /usr/local/include/QtCore/QVariant \
   /usr/local/lib/QtCore.framework/Headers/qvariant.h \
@@ -315,10 +317,6 @@ CMakeFiles/calc.dir/calculator.cpp.o: \
   /usr/local/include/QtGui/qtextformat.h /usr/local/include/QtGui/qpen.h \
   /usr/local/include/QtGui/qtextoption.h \
   /usr/local/include/QtWidgets/QMainWindow \
-  /usr/local/include/QtWidgets/QMenuBar \
-  /usr/local/lib/QtWidgets.framework/Headers/qmenubar.h \
-  /usr/local/include/QtWidgets/qmenu.h \
-  /usr/local/include/QtGui/qaction.h \
   /usr/local/include/QtWidgets/QPushButton \
   /usr/local/lib/QtWidgets.framework/Headers/qpushbutton.h \
   /usr/local/include/QtWidgets/qabstractbutton.h \

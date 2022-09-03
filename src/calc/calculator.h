@@ -20,5 +20,12 @@ public:
 
 private:
     Ui::calculator *ui;
+    void EqualButton(QString str);
+
+private slots:
+    void OperChange();
+    void ClearDisplay();
+    void DelButton();
+    void Equal();
 };
 #endif // CALCULATOR_H

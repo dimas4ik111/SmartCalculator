@@ -75,6 +75,8 @@
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_symbol_aliasing.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include/stdarg.h \
+  /Users/osgreywi/Desktop/git_hub_my/smartcalc/src/headers/polish_notation.h \
+  /Users/osgreywi/Desktop/git_hub_my/smartcalc/src/headers/stack.h \
   /usr/local/lib/QtCore.framework/Versions/A/Headers/qalgorithms.h \
   /usr/local/lib/QtCore.framework/Versions/A/Headers/qanystringview.h \
   /usr/local/lib/QtCore.framework/Versions/A/Headers/qarraydata.h \

@@ -280,4 +280,6 @@ CMakeFiles/calc.dir/calc_autogen/mocs_compilation.cpp.o: \
   /usr/local/include/QtGui/qcursor.h /usr/local/include/QtGui/qbitmap.h \
   /usr/local/include/QtGui/qkeysequence.h \
   /usr/local/include/QtWidgets/qtabwidget.h \
-  /usr/local/include/QtGui/qicon.h
+  /usr/local/include/QtGui/qicon.h \
+  /Users/osgreywi/Desktop/git_hub_my/smartcalc/src/calc/../headers/polish_notation.h \
+  /Users/osgreywi/Desktop/git_hub_my/smartcalc/src/calc/../headers/stack.h
