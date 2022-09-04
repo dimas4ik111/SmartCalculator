@@ -35,11 +35,30 @@ calculator::calculator(QWidget *parent)
             SLOT(OperChange()));
     connect(ui->ButtonDel, SIGNAL(released()), this,
             SLOT(DelButton()));
+    connect(ui->ButtonDot, SIGNAL(released()), this,
+            SLOT(OperChange()));
+    connect(ui->ButtonClear, SIGNAL(released()), this,
+            SLOT(ClearDisplay()));
+    connect(ui->ButtonSin, SIGNAL(released()), this,
+            SLOT(OperChange()));
+    connect(ui->ButtonCos, SIGNAL(released()), this,
+            SLOT(OperChange()));
+    connect(ui->ButtonTan, SIGNAL(released()), this,
+            SLOT(OperChange()));
+    connect(ui->ButtonAsin, SIGNAL(released()), this,
+            SLOT(OperChange()));
+    connect(ui->ButtonAcos, SIGNAL(released()), this,
+            SLOT(OperChange()));
+    connect(ui->ButtonAtan, SIGNAL(released()), this,
+            SLOT(OperChange()));
+    connect(ui->ButtonSqrt, SIGNAL(released()), this,
+            SLOT(OperChange()));
+    connect(ui->ButtonPow, SIGNAL(released()), this,
+            SLOT(OperChange()));
+
     connect(ui->ButtonEqual, SIGNAL(released()), this,
             SLOT(Equal()));
 
-    connect(ui->ButtonClear, SIGNAL(released()), this,
-            SLOT(ClearDisplay()));
 }
 
 calculator::~calculator()
@@ -96,6 +115,24 @@ void calculator::OperChange() {
         ui->Display->setText(ui->Display->text() + "8");
     } else if (QString::compare(butVal, "9", Qt::CaseInsensitive) == 0) {
         ui->Display->setText(ui->Display->text() + "9");
+    } else if (QString::compare(butVal, ".", Qt::CaseInsensitive) == 0) {
+        ui->Display->setText(ui->Display->text() + ".");
+    } else if (QString::compare(butVal, "^", Qt::CaseInsensitive) == 0) {
+        ui->Display->setText(ui->Display->text() + "^");
+    } else if (QString::compare(butVal, "sin", Qt::CaseInsensitive) == 0) {
+        ui->Display->setText(ui->Display->text() + "sin");
+    } else if (QString::compare(butVal, "cos", Qt::CaseInsensitive) == 0) {
+        ui->Display->setText(ui->Display->text() + "cos");
+    } else if (QString::compare(butVal, "tan", Qt::CaseInsensitive) == 0) {
+        ui->Display->setText(ui->Display->text() + "tan");
+    } else if (QString::compare(butVal, "asin", Qt::CaseInsensitive) == 0) {
+        ui->Display->setText(ui->Display->text() + "asin");
+    } else if (QString::compare(butVal, "acos", Qt::CaseInsensitive) == 0) {
+        ui->Display->setText(ui->Display->text() + "acos");
+    } else if (QString::compare(butVal, "atan", Qt::CaseInsensitive) == 0) {
+        ui->Display->setText(ui->Display->text() + "atan");
+    } else if (QString::compare(butVal, "sqrt", Qt::CaseInsensitive) == 0) {
+        ui->Display->setText(ui->Display->text() + "sqrt");
     }
 }
 
