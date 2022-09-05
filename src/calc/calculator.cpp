@@ -137,6 +137,16 @@ void calculator::OperChange() {
 }
 
 void calculator::Equal() {
+    double num = 0;
+    QString str = ui->Display->text();
+    char *buf = (char *)calloc(256, sizeof(char));
+    QByteArray ba = str.toLatin1();
+    buf = ba.data();
     ClearDisplay();
-    QString DisText = ui->Display->text();
+    if (s21_polish_notation(buf, &num) == -1) {
+        ui->Display->setText("ERR");
+    } else {
+        QString valDouble = QString::number(num);
+        ui->Display->setText(valDouble);
+    }
 }

@@ -30,7 +30,7 @@ double calculator_algorithm(list *stack) {
     }
     while (work != NULL)
         pop(&work);
-    printf("RESULT = %f\n", res);
+    // printf("RESULT = %f\n", res);
     return res;
 }
 

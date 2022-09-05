@@ -13,10 +13,12 @@ int main() {
     }
     buf[i - 1] = '\0';
     // printf("buf = %s\n", buf);
-    if (s21_polish_notation(buf) == -1) {
+    double num = 0;
+    if (s21_polish_notation(buf, &num) == -1) {
         printf("\n\nERR\n\n");
         return 0;
     }
+    printf("num = %f\n", num);
     free(buf);
     return 0;
 }

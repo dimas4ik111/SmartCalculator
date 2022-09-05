@@ -9,7 +9,7 @@
 
 #define ERROR -1
 
-int s21_polish_notation(char* buf);
+int s21_polish_notation(char* buf, double *num);
 int is_it_num(const char *str);
 int is_it_operand(const char *str);
 int is_it_function(const char *str);

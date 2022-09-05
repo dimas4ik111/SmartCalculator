@@ -1,6 +1,6 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
 
-project(calc VERSION 0.1 LANGUAGES CXX)
+project(Calc VERSION 0.1 LANGUAGES CXX C)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -15,6 +15,11 @@ find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 set(PROJECT_SOURCES
+        ../headers/polish_notation.h
+        ../headers/stack.h
+        ../lib/calculate.c
+        ../lib/polish_notation.c
+        ../lib/stack.c
         main.cpp
         calculator.cpp
         calculator.h
@@ -22,31 +27,19 @@ set(PROJECT_SOURCES
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-    qt_add_executable(calc
+    qt_add_executable(Calc
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
     )
-# Define target properties for Android with Qt 6 as:
-#    set_property(TARGET calc APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
-#                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
-# For more information, see https://doc.qt.io/qt-6/qt-add-executable.html#target-creation
 else()
-    if(ANDROID)
-        add_library(calc SHARED
-            ${PROJECT_SOURCES}
-        )
-# Define properties for Android with Qt 5 after find_package() calls as:
-#    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
-    else()
-        add_executable(calc
-            ${PROJECT_SOURCES}
-        )
-    endif()
+    add_executable(Calc
+        ${PROJECT_SOURCES}
+    )
 endif()
 
-target_link_libraries(calc PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(Calc PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 
-set_target_properties(calc PROPERTIES
+set_target_properties(Calc PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
@@ -55,5 +48,5 @@ set_target_properties(calc PROPERTIES
 )
 
 if(QT_VERSION_MAJOR EQUAL 6)
-    qt_finalize_executable(calc)
+    qt_finalize_executable(Calc)
 endif()

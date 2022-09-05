@@ -2,7 +2,14 @@
 #define CALCULATOR_H
 
 #include <QMainWindow>
+#include <QMessageBox>
+#include <QString>
+#include <QWidget>
+#include <QtGui>
+
+extern "C" {
 #include "../headers/polish_notation.h"
+}
 
 QT_BEGIN_NAMESPACE
 namespace Ui {

@@ -1,6 +1,6 @@
 #include "../headers/polish_notation.h"
 
-int s21_polish_notation(char* str){
+int s21_polish_notation(char* str, double* result) {
     if (str == NULL)
         return ERROR;
     int err = 0;
@@ -59,11 +59,11 @@ int s21_polish_notation(char* str){
         push(&work, peek_num(oper), peek_oper(oper), 0);
         pop(&oper);
     }
-    if ((oper_counter == 0 || num_counter == 0 || br_counter % 2 != 0) && x_counter == 0) {
+    if (oper_counter == 0 || num_counter == 0 || br_counter % 2 != 0) {
         err = -1;
+        *result = 0;
     } else {
-        // print_polish(work);
-        calculator_algorithm(work);
+        *result = calculator_algorithm(work);
     }
     return err;
 }
