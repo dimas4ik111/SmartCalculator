@@ -11,7 +11,7 @@ install:
 	rm -rf Makefile
 	cp copyMakefile/Makefile ./
 
-unintall:
+uninstall:
 	rm -rf calc_autogen
 	rm -rf calc.app
 	rm -rf CMakeFiles
@@ -24,4 +24,3 @@ app:
 clean :
 	rm -rf *.out
 	rm -rf *.a
-	cd build-calc-Desktop_x86_darwin_generic_mach_o_64bit-Debug && make clean
