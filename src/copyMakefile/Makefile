@@ -5,13 +5,13 @@ SRC = lib/*.c
 main :
 	$(CC) $(CFLAGS) $(SRC) main.c -o test.out
 
-install:
+install: uninstall
 	cmake calc/CMakeLists.txt
 	make
 	rm -rf Makefile
 	cp copyMakefile/Makefile ./
 
-uninstall: uninstall
+uninstall:
 	rm -rf calc_autogen
 	rm -rf calc.app
 	rm -rf CMakeFiles

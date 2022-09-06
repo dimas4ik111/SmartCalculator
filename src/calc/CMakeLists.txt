@@ -24,6 +24,9 @@ set(PROJECT_SOURCES
         calculator.cpp
         calculator.h
         calculator.ui
+        grafic.h
+        grafic.cpp
+        grafic.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

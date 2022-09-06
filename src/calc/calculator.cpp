@@ -68,6 +68,9 @@ calculator::~calculator()
 
 void calculator::ClearDisplay() {
     ui->Display->setText("");
+    ui->xVal->setText("");
+    ui->xMax->setText("");
+    ui->xMin->setText("");
 }
 
 void calculator::DelButton() {
@@ -139,14 +142,64 @@ void calculator::OperChange() {
 void calculator::Equal() {
     double num = 0;
     QString str = ui->Display->text();
-    char *buf = (char *)calloc(256, sizeof(char));
     QByteArray ba = str.toLatin1();
-    buf = ba.data();
-    ClearDisplay();
-    if (s21_polish_notation(buf, &num) == -1) {
+    if (s21_polish_notation(ba.data(), &num) == -1) {
         ui->Display->setText("ERR");
     } else {
         QString valDouble = QString::number(num);
         ui->Display->setText(valDouble);
     }
 }
+
+void calculator::on_ButtonGraf_clicked()
+{
+    graf.graphWrite(ui->xVal->text().toDouble(), ui->xMin->text().toInt(), ui->xMax->text().toInt());
+    graf.show();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
