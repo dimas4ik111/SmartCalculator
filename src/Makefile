@@ -11,7 +11,7 @@ install:
 	rm -rf Makefile
 	cp copyMakefile/Makefile ./
 
-uninstall:
+uninstall: uninstall
 	rm -rf calc_autogen
 	rm -rf calc.app
 	rm -rf CMakeFiles

@@ -84,7 +84,7 @@ int work_with_oper(const char *str, list **work, list **oper, int unary_minus) {
         pop(oper);
         result = 1;
     } else {
-        buf = calloc(1, sizeof(char) * is_it_operand(str));
+        buf = calloc(is_it_operand(str) + 1, sizeof(char));
         strncpy(buf, str, is_it_operand(str));
         int prio_buf = priority_oper(buf);
         if (prio_buf > peek_priority(*oper) || *oper == NULL) {
@@ -286,7 +286,7 @@ void print_polish(list *head) {
 
 int error_operand(const char *buf, int i, int stop_val) {
     int res = 0;
-    if (i == 0 && is_it_function(buf) < 0 && *buf != '-' && strstr(buf, "sqrt") != NULL) {
+    if (i == 0 && is_it_function(buf) < 0 && *buf != '-' && strncmp(buf, "sqrt", 4) != 0) {
         res = 1;
     } else if (i == stop_val && *buf != ')') {
         res = 1;

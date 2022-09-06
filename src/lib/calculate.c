@@ -19,7 +19,9 @@ double calculator_algorithm(list *stack) {
         } else {
             if ((peek_oper(head) >= PLUS && peek_oper(head) <= MOD) ||
                 peek_oper(head) == POW) {
-                res = binary_calc(pop(&work), pop(&work), peek_oper(head));
+                double a = pop(&work);
+                double b = pop(&work);
+                res = binary_calc(b, a, peek_oper(head));
                 push(&work, res, 0, 0);
             } else {
                 res = unary_calc(pop(&work), peek_oper(head));
