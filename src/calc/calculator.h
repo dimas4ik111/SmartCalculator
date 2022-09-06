@@ -6,7 +6,6 @@
 #include <QString>
 #include <QWidget>
 #include <QtGui>
-#include <grafic.h>
 
 extern "C" {
 #include "../headers/polish_notation.h"
@@ -28,7 +27,6 @@ public:
 
 private:
     Ui::calculator *ui;
-    grafic graf;
     void EqualButton(QString str);
 
 private slots:
@@ -36,6 +34,5 @@ private slots:
     void ClearDisplay();
     void DelButton();
     void Equal();
-    void on_ButtonGraf_clicked();
 };
 #endif // CALCULATOR_H
