@@ -9,7 +9,7 @@ calculator::calculator(QWidget *parent)
 
     ui->Display->setText("");
 
-    QPushButton *button = (QPushButton *)sender();
+//    QPushButton *button = (QPushButton *)sender();
 
     QPushButton *numBut[10];
     for (int i = 0; i < 10; i++) {

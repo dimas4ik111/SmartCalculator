@@ -766,6 +766,32 @@ QPushButton:pressed {
       </property>
      </widget>
     </item>
+    <item row="8" column="2" colspan="2">
+     <widget class="QPushButton" name="Button0_4">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #696969;
+	border: 1px solid #696969;
+	padding: 5px;
+}
+
+QPushButton:pressed {
+	background-color: #DCDCDC;
+	border: 1px solid #696969;
+	padding: 5px;
+}</string>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
