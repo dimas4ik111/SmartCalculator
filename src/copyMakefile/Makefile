@@ -6,20 +6,20 @@ main :
 	$(CC) $(CFLAGS) $(SRC) main.c -o test.out
 
 install: uninstall
-	cmake calc/CMakeLists.txt
+	qmake calculator/calculator.pro
 	make
 	rm -rf Makefile
 	cp copyMakefile/Makefile ./
 
 uninstall:
-	rm -rf calc_autogen
-	rm -rf calc.app
-	rm -rf CMakeFiles
-	rm -rf cmake_install.cmake
-	rm -rf CMakeCache.txt
+	rm -rf calculator.app
+	rm -rf .qmake.stash
+	rm -rf ./*.o
+	rm -rf ./*.h
+	rm -rf moc_*
 
 app:
-	open calc.app
+	open calculator.app
 
 clean :
 	rm -rf *.out
