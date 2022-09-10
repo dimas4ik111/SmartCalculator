@@ -7,6 +7,8 @@
 #include <QWidget>
 #include <QtGui>
 #include <QDebug>
+#include <graph.h>
+#include <qcustomplot.h>
 
 extern "C" {
 #include "../headers/polish_notation.h"
@@ -28,12 +30,14 @@ public:
 
 private:
     Ui::calculator *ui;
-    void EqualButton(QString str);
+    Graph graph;
+    void EqualButton(QString str);    
 
 private slots:
     void OperChange();
     void ClearDisplay();
     void DelButton();
     void Equal();
+    void on_Button0_4_clicked();
 };
 #endif // CALCULATOR_H

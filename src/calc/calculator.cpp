@@ -55,6 +55,8 @@ calculator::calculator(QWidget *parent)
             SLOT(OperChange()));
     connect(ui->ButtonPow, SIGNAL(released()), this,
             SLOT(OperChange()));
+    connect(ui->ButtonX, SIGNAL(released()), this,
+            SLOT(OperChange()));
 
     connect(ui->ButtonEqual, SIGNAL(released()), this,
             SLOT(Equal()));
@@ -136,6 +138,8 @@ void calculator::OperChange() {
         ui->Display->setText(ui->Display->text() + "atan");
     } else if (QString::compare(butVal, "sqrt", Qt::CaseInsensitive) == 0) {
         ui->Display->setText(ui->Display->text() + "sqrt");
+    } else if (QString::compare(butVal, "X", Qt::CaseInsensitive) == 0) {
+        ui->Display->setText(ui->Display->text() + "x");
     }
 }
 
@@ -143,10 +147,17 @@ void calculator::Equal() {
     double num = 0;
     QString str = ui->Display->text();
     QByteArray ba = str.toLatin1();
-    if (s21_polish_notation(ba.data(), &num) == -1) {
+    if (s21_polish_notation(ba.data(), &num, 0, 0) == -1) {
         ui->Display->setText("ERR");
     } else {
         QString valDouble = QString::number(num);
         ui->Display->setText(valDouble);
     }
 }
+
+void calculator::on_Button0_4_clicked()
+{
+    graph.show();
+    graph.graphView(ui->Display->text());
+}
+
