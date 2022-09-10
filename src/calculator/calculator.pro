@@ -1,6 +1,6 @@
 QT       += core gui
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
 
 CONFIG += c++17
 
@@ -14,13 +14,15 @@ SOURCES += \
     ../lib/stack.c \
     graph.cpp \
     main.cpp \
-    calculator.cpp
+    calculator.cpp \
+    qcustomplot.cpp
 
 HEADERS += \
     ../headers/polish_notation.h \
     ../headers/stack.h \
     calculator.h \
-    graph.h
+    graph.h \
+    qcustomplot.h
 
 FORMS += \
     calculator.ui \
