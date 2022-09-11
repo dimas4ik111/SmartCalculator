@@ -14,7 +14,7 @@ int main() {
     buf[i - 1] = '\0';
     // printf("buf = %s\n", buf);
     double num = 0;
-    if (s21_polish_notation(buf, &num, 1) == -1) {
+    if (s21_polish_notation(buf, &num, 2) == -1) {
         printf("\n\nERR\n\n");
         return 0;
     }

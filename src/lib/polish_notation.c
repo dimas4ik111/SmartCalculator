@@ -60,7 +60,9 @@ int s21_polish_notation(char* str, double* result, double X) {
         push(&work, peek_num(oper), peek_oper(oper), 0);
         pop(&oper);
     }
-    if (oper_counter == 0 || num_counter == 0 || br_counter % 2 != 0) {
+    if (oper_counter == 0 && num_counter == 1 && x_counter == 1) {
+        *result = X;
+    } else if (num_counter == 0 || br_counter % 2 != 0) {
         err = -1;
         *result = 0;
     } else {
