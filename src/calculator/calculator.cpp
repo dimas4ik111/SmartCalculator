@@ -147,7 +147,8 @@ void calculator::Equal() {
     double num = 0;
     QString str = ui->Display->text();
     QByteArray ba = str.toLatin1();
-    if (s21_polish_notation(ba.data(), &num, 0, 0) == -1) {
+    double xValue = ui->xVal->text().toDouble();
+    if (s21_polish_notation(ba.data(), &num, xValue) == -1) {
         ui->Display->setText("ERR");
     } else {
         QString valDouble = QString::number(num);
@@ -160,7 +161,7 @@ void calculator::on_Button0_4_clicked()
     Graph *graph;
     graph = new Graph;
     connect(this, &calculator::signal, graph, &Graph::slot);
-    emit signal(ui->Display->text(), (ui->xVal->text()).toDouble(), ui->xMin->text().toDouble(), ui->xMax->text().toDouble());
+    emit signal(ui->Display->text(), ui->xMin->text().toDouble(), ui->xMax->text().toDouble());
     graph->show();
 }
 

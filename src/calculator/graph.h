@@ -4,6 +4,10 @@
 #include <QWidget>
 #include <QVector>
 
+extern "C" {
+#include "../headers/polish_notation.h"
+}
+
 namespace Ui {
 class Graph;
 }
@@ -22,7 +26,7 @@ private:
     QVector<double> x,y;
 
 public slots:
-    void slot(QString str, double X, double xMin, double xMax);
+    void slot(QString str, double xMin, double xMax);
 };
 
 #endif // GRAPH_H

@@ -1,6 +1,6 @@
 #include "../headers/polish_notation.h"
 
-int s21_polish_notation(char* str, double* result, double X, int graph) {
+int s21_polish_notation(char* str, double* result, double X) {
     if (str == NULL)
         return ERROR;
     int err = 0;
@@ -21,6 +21,7 @@ int s21_polish_notation(char* str, double* result, double X, int graph) {
             str++;
             i++;
             prev_oper = 0;
+            num_counter++;
         } else if (is_it_num(str) > 0) {
             i += is_it_num(str);
             push_num(str, &work, is_it_num(str), 0);
@@ -63,7 +64,7 @@ int s21_polish_notation(char* str, double* result, double X, int graph) {
         err = -1;
         *result = 0;
     } else {
-        *result = calculator_algorithm(work, graph, X, &err);
+        *result = calculator_algorithm(work, X);
     }
     return err;
 }

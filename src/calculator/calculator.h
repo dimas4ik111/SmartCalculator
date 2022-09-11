@@ -40,6 +40,6 @@ private slots:
     void on_Button0_4_clicked();
 
 signals:
-    void signal(QString, double, double, double);
+    void signal(QString, double, double);
 };
 #endif // CALCULATOR_H

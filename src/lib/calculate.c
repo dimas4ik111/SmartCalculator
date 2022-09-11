@@ -1,21 +1,17 @@
 #include "../headers/polish_notation.h"
 
-double calculator_algorithm(list *stack, int graph, double X, int *err) {
+double calculator_algorithm(list *stack, double X) {
     list *head = NULL;
     list *work = NULL;
     double res = 0;
-    double x = X;
     while (stack) {
         push(&head, peek_num(stack), peek_oper(stack), peek_priority(stack));
         pop(&stack);
     }
     while (head) {
         if (peek_oper(head) == 0) {
-            if (peek_priority(head) == 999 && graph) {
-                push(&work, x, 0, 0);
-            } else if (peek_priority(head) == 999 && !graph) {
-                *err = -1;
-                break;
+            if (peek_priority(head) == 999) {
+                push(&work, X, 0, 0);
             } else {
                 push(&work, peek_num(head), 0, 0);
             }
