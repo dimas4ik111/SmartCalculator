@@ -18,7 +18,8 @@ public:
 
 private:
     Ui::Graph *ui;
-//    double h = 0.1;
+    double h = 0.1;
+    QVector<double> x,y;
 
 public slots:
     void slot(QString str, double X, double xMin, double xMax);
