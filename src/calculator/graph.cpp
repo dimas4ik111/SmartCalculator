@@ -13,9 +13,7 @@ Graph::~Graph()
     delete ui;
 }
 
-int Graph::graphView(QString qstr, double X, int xMin, int xMax) {
-    qDebug() << qstr;
-//    QByteArray ba = qstr.toLatin1();
-    qDebug() << X << xMin << xMax;
-    return 0;
+void Graph::slot(QString str, double X, double xMin, double xMax)
+{
+    qDebug() << str << X << xMin << xMax;
 }

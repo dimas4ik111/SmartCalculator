@@ -2,6 +2,7 @@
 #define GRAPH_H
 
 #include <QWidget>
+#include <QVector>
 
 namespace Ui {
 class Graph;
@@ -14,10 +15,13 @@ class Graph : public QWidget
 public:
     explicit Graph(QWidget *parent = nullptr);
     ~Graph();
-    int graphView(QString qstr, double X, int xMIn, int xMax);
 
 private:
     Ui::Graph *ui;
+//    double h = 0.1;
+
+public slots:
+    void slot(QString str, double X, double xMin, double xMax);
 };
 
 #endif // GRAPH_H

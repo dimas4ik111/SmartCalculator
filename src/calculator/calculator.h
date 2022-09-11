@@ -30,7 +30,6 @@ public:
 
 private:
     Ui::calculator *ui;
-    Graph graph;
     void EqualButton(QString str);    
 
 private slots:
@@ -39,5 +38,8 @@ private slots:
     void DelButton();
     void Equal();
     void on_Button0_4_clicked();
+
+signals:
+    void signal(QString, double, double, double);
 };
 #endif // CALCULATOR_H

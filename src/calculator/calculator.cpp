@@ -157,7 +157,10 @@ void calculator::Equal() {
 
 void calculator::on_Button0_4_clicked()
 {
-    graph.show();
-    graph.graphView(ui->Display->text(), ui->xVal->text().toDouble(), ui->xMin->text().toDouble(), ui->xMax->text().toDouble());
+    Graph *graph;
+    graph = new Graph;
+    connect(this, &calculator::signal, graph, &Graph::slot);
+    emit signal(ui->Display->text(), (ui->xVal->text()).toDouble(), ui->xMin->text().toDouble(), ui->xMax->text().toDouble());
+    graph->show();
 }
 
