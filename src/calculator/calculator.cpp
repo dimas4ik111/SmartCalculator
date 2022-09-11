@@ -158,6 +158,6 @@ void calculator::Equal() {
 void calculator::on_Button0_4_clicked()
 {
     graph.show();
-    graph.graphView(ui->Display->text());
+    graph.graphView(ui->Display->text(), ui->xVal->text().toDouble(), ui->xMin->text().toDouble(), ui->xMax->text().toDouble());
 }
 

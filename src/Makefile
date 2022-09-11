@@ -17,6 +17,7 @@ uninstall:
 	rm -rf ./*.o
 	rm -rf ./*.h
 	rm -rf moc_*
+	rm -rf calculator/*.user
 
 app:
 	open calculator.app

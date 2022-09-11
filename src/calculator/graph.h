@@ -14,7 +14,7 @@ class Graph : public QWidget
 public:
     explicit Graph(QWidget *parent = nullptr);
     ~Graph();
-    int graphView(QString qstr);
+    int graphView(QString qstr, double X, int xMIn, int xMax);
 
 private:
     Ui::Graph *ui;
