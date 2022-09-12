@@ -60,7 +60,6 @@ int s21_polish_notation(char* str, double* result, double X) {
         } else if (*str == '\0') {
             i = stop;
         } else {
-            // printf("\n\nEXIT\n\n");
             err = ERROR;
         }
 
@@ -83,9 +82,6 @@ int s21_polish_notation(char* str, double* result, double X) {
         *result = calculator_algorithm(work, X);
         // print_polish(work);
     }
-    // while (work != NULL) {
-    //     pop(&work);
-    // }
     
     return err;
 }
@@ -159,6 +155,10 @@ int wich_opearnd(char* buf) {
         res = POW;
     } else if (strncmp(buf, "sqrt", 4) == 0) {
         res = SQRT;
+    } else if (strncmp(buf, "ln", 4) == 0) {
+        res = LN;
+    } else if (strncmp(buf, "log", 4) == 0) {
+        res = LOG;
     }
     return res;
 }
@@ -174,7 +174,7 @@ int priority_oper(char *buf) {
         res = 2;
     } else if (strncmp(buf, "sin", 3) == 0 || strncmp(buf, "cos", 3) == 0 || strncmp(buf, "tan", 3) == 0 ||
         strncmp(buf, "asin", 4) == 0 || strncmp(buf, "acos", 4) == 0 || strncmp(buf, "atan", 4) == 0 ||
-        strncmp(buf, "sqrt", 4) == 0) {
+        strncmp(buf, "sqrt", 4) == 0 || strncmp(buf, "log", 4) == 0 || strncmp(buf, "ln", 4) == 0) {
         res = 4;
     } else if (*buf == '^') {
         res = 3;
@@ -236,6 +236,10 @@ int is_it_function(const char *str) {
         res = 4;
     } else if (strncmp(str, "sqrt", 4) == 0) {
         res = 4;
+    } else if (strncmp(str, "ln", 2) == 0) {
+        res = 2;
+    } else if (strncmp(str, "log", 3) == 0) {
+        res = 3;
     }
     return res;
 }

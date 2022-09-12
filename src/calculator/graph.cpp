@@ -15,7 +15,6 @@ Graph::~Graph()
 
 void Graph::slot(QString str, double xMin, double xMax)
 {
-//    qDebug() << str << xMin << xMax;
     QByteArray ba = str.toLatin1();
     double yMin = 0, yMax = 0;
     s21_polish_notation(ba.data(), &yMin, xMin);
@@ -40,7 +39,6 @@ void Graph::slot(QString str, double xMin, double xMax)
         double res = 0;
         s21_polish_notation(ba.data(), &res, X);
         y.push_back(res);
-        qDebug() << X;
     }
     ui->widget->addGraph();
     ui->widget->graph(0)->addData(x, y);

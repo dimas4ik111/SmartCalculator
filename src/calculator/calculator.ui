@@ -21,190 +21,6 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="3" column="1">
-     <widget class="QPushButton" name="ButtonMul">
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #D2691E;
-	border: 1px solid #696969;
-	padding: 5px;
-}
-
-QPushButton:pressed {
-	background-color: #DCDCDC;
-	border: 1px solid #696969;
-	padding: 5px;
-}</string>
-      </property>
-      <property name="text">
-       <string>*</string>
-      </property>
-     </widget>
-    </item>
-    <item row="7" column="3" colspan="2">
-     <widget class="QPushButton" name="Button0">
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #696969;
-	border: 1px solid #696969;
-	padding: 5px;
-}
-
-QPushButton:pressed {
-	background-color: #DCDCDC;
-	border: 1px solid #696969;
-	padding: 5px;
-}</string>
-      </property>
-      <property name="text">
-       <string>0</string>
-      </property>
-     </widget>
-    </item>
-    <item row="9" column="2">
-     <widget class="QPushButton" name="ButtonX">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #D2691E;
-	border: 1px solid #696969;
-	padding: 5px;
-}
-
-QPushButton:pressed {
-	background-color: #DCDCDC;
-	border: 1px solid #696969;
-	padding: 5px;
-}</string>
-      </property>
-      <property name="text">
-       <string>X</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="5">
-     <widget class="QLineEdit" name="xMax">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-      </property>
-      <property name="readOnly">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="7" column="2">
-     <widget class="QPushButton" name="ButtonDot">
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #696969;
-	border: 1px solid #696969;
-	padding: 5px;
-}
-
-QPushButton:pressed {
-	background-color: #DCDCDC;
-	border: 1px solid #696969;
-	padding: 5px;
-}</string>
-      </property>
-      <property name="text">
-       <string>.</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="4">
-     <widget class="QLineEdit" name="lineEdit_5">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="text">
-       <string>Xmax =</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="3">
-     <widget class="QPushButton" name="ButtonSub">
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #D2691E;
-	border: 1px solid #696969;
-	padding: 5px;
-}
-
-QPushButton:pressed {
-	background-color: #DCDCDC;
-	border: 1px solid #696969;
-	padding: 5px;
-}</string>
-      </property>
-      <property name="text">
-       <string>-</string>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="2">
-     <widget class="QPushButton" name="Button1">
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #696969;
-	border: 1px solid #696969;
-	padding: 5px;
-}
-
-QPushButton:pressed {
-	background-color: #DCDCDC;
-	border: 1px solid #696969;
-	padding: 5px;
-}</string>
-      </property>
-      <property name="text">
-       <string>1</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="2">
-     <widget class="QPushButton" name="Button7">
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #696969;
-	border: 1px solid #696969;
-	padding: 5px;
-}
-
-QPushButton:pressed {
-	background-color: #DCDCDC;
-	border: 1px solid #696969;
-	padding: 5px;
-}</string>
-      </property>
-      <property name="text">
-       <string>7</string>
-      </property>
-     </widget>
-    </item>
     <item row="5" column="5" rowspan="3">
      <widget class="QPushButton" name="ButtonEqual">
       <property name="sizePolicy">
@@ -231,11 +47,11 @@ QPushButton:pressed {
       </property>
      </widget>
     </item>
-    <item row="4" column="0">
-     <widget class="QPushButton" name="ButtonSin">
+    <item row="7" column="2">
+     <widget class="QPushButton" name="ButtonDot">
       <property name="styleSheet">
        <string notr="true">QPushButton {
-	background-color: #D2691E;
+	background-color: #696969;
 	border: 1px solid #696969;
 	padding: 5px;
 }
@@ -247,38 +63,31 @@ QPushButton:pressed {
 }</string>
       </property>
       <property name="text">
-       <string>sin</string>
+       <string>.</string>
       </property>
      </widget>
     </item>
-    <item row="9" column="3" colspan="3">
-     <widget class="QPushButton" name="Button0_4">
+    <item row="1" column="0">
+     <widget class="QLineEdit" name="DisplayX">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #696969;
-	border: 1px solid #696969;
-	padding: 5px;
-}
-
-QPushButton:pressed {
-	background-color: #DCDCDC;
-	border: 1px solid #696969;
-	padding: 5px;
-}</string>
-      </property>
       <property name="text">
-       <string>graph</string>
+       <string>X =</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
       </property>
      </widget>
     </item>
-    <item row="6" column="0">
-     <widget class="QPushButton" name="ButtonTan">
+    <item row="6" column="1">
+     <widget class="QPushButton" name="ButtonAtan">
       <property name="styleSheet">
        <string notr="true">QPushButton {
 	background-color: #D2691E;
@@ -293,67 +102,7 @@ QPushButton:pressed {
 }</string>
       </property>
       <property name="text">
-       <string>tan</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="1">
-     <widget class="QPushButton" name="ButtonAcos">
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #D2691E;
-	border: 1px solid #696969;
-	padding: 5px;
-}
-
-QPushButton:pressed {
-	background-color: #DCDCDC;
-	border: 1px solid #696969;
-	padding: 5px;
-}</string>
-      </property>
-      <property name="text">
-       <string>acos</string>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="4">
-     <widget class="QPushButton" name="Button3">
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #696969;
-	border: 1px solid #696969;
-	padding: 5px;
-}
-
-QPushButton:pressed {
-	background-color: #DCDCDC;
-	border: 1px solid #696969;
-	padding: 5px;
-}</string>
-      </property>
-      <property name="text">
-       <string>3</string>
-      </property>
-     </widget>
-    </item>
-    <item row="9" column="0">
-     <widget class="QPushButton" name="ButtonOpenBr">
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #D2691E;
-	border: 1px solid #696969;
-	padding: 5px;
-}
-
-QPushButton:pressed {
-	background-color: #DCDCDC;
-	border: 1px solid #696969;
-	padding: 5px;
-}</string>
-      </property>
-      <property name="text">
-       <string>(</string>
+       <string>atan</string>
       </property>
      </widget>
     </item>
@@ -377,27 +126,8 @@ QPushButton:pressed {
       </property>
      </widget>
     </item>
-    <item row="1" column="3">
-     <widget class="QLineEdit" name="xMin">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-      </property>
-      <property name="readOnly">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="4">
-     <widget class="QPushButton" name="ButtonAdd">
+    <item row="9" column="1">
+     <widget class="QPushButton" name="ButtonCloseBr">
       <property name="styleSheet">
        <string notr="true">QPushButton {
 	background-color: #D2691E;
@@ -412,28 +142,12 @@ QPushButton:pressed {
 }</string>
       </property>
       <property name="text">
-       <string>+</string>
+       <string>)</string>
       </property>
      </widget>
     </item>
-    <item row="0" column="0" colspan="6">
-     <widget class="QLineEdit" name="Display">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="7" column="1">
-     <widget class="QPushButton" name="ButtonPow">
+    <item row="3" column="3">
+     <widget class="QPushButton" name="ButtonSub">
       <property name="styleSheet">
        <string notr="true">QPushButton {
 	background-color: #D2691E;
@@ -448,12 +162,12 @@ QPushButton:pressed {
 }</string>
       </property>
       <property name="text">
-       <string>^</string>
+       <string>-</string>
       </property>
      </widget>
     </item>
-    <item row="4" column="4">
-     <widget class="QPushButton" name="Button9">
+    <item row="6" column="4">
+     <widget class="QPushButton" name="Button3">
       <property name="styleSheet">
        <string notr="true">QPushButton {
 	background-color: #696969;
@@ -468,7 +182,7 @@ QPushButton:pressed {
 }</string>
       </property>
       <property name="text">
-       <string>9</string>
+       <string>3</string>
       </property>
      </widget>
     </item>
@@ -491,8 +205,8 @@ QPushButton:pressed {
       </property>
      </widget>
     </item>
-    <item row="5" column="3">
-     <widget class="QPushButton" name="Button5">
+    <item row="5" column="2">
+     <widget class="QPushButton" name="Button4">
       <property name="styleSheet">
        <string notr="true">QPushButton {
 	background-color: #696969;
@@ -507,12 +221,12 @@ QPushButton:pressed {
 }</string>
       </property>
       <property name="text">
-       <string>5</string>
+       <string>4</string>
       </property>
      </widget>
     </item>
-    <item row="4" column="3">
-     <widget class="QPushButton" name="Button8">
+    <item row="4" column="2">
+     <widget class="QPushButton" name="Button7">
       <property name="styleSheet">
        <string notr="true">QPushButton {
 	background-color: #696969;
@@ -527,12 +241,12 @@ QPushButton:pressed {
 }</string>
       </property>
       <property name="text">
-       <string>8</string>
+       <string>7</string>
       </property>
      </widget>
     </item>
-    <item row="3" column="2">
-     <widget class="QPushButton" name="ButtonDiv">
+    <item row="4" column="0">
+     <widget class="QPushButton" name="ButtonSin">
       <property name="styleSheet">
        <string notr="true">QPushButton {
 	background-color: #D2691E;
@@ -547,7 +261,121 @@ QPushButton:pressed {
 }</string>
       </property>
       <property name="text">
-       <string>/</string>
+       <string>sin</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="6">
+     <widget class="QLineEdit" name="Display">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="3">
+     <widget class="QLineEdit" name="xMin">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QPushButton" name="ButtonAsin">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #D2691E;
+	border: 1px solid #696969;
+	padding: 5px;
+}
+
+QPushButton:pressed {
+	background-color: #DCDCDC;
+	border: 1px solid #696969;
+	padding: 5px;
+}</string>
+      </property>
+      <property name="text">
+       <string>asin</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="5">
+     <widget class="QLineEdit" name="xMax">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="3" colspan="2">
+     <widget class="QPushButton" name="Button0">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #696969;
+	border: 1px solid #696969;
+	padding: 5px;
+}
+
+QPushButton:pressed {
+	background-color: #DCDCDC;
+	border: 1px solid #696969;
+	padding: 5px;
+}</string>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="QPushButton" name="ButtonTan">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #D2691E;
+	border: 1px solid #696969;
+	padding: 5px;
+}
+
+QPushButton:pressed {
+	background-color: #DCDCDC;
+	border: 1px solid #696969;
+	padding: 5px;
+}</string>
+      </property>
+      <property name="text">
+       <string>tan</string>
       </property>
      </widget>
     </item>
@@ -577,56 +405,6 @@ QPushButton:pressed {
       </property>
      </widget>
     </item>
-    <item row="9" column="1">
-     <widget class="QPushButton" name="ButtonCloseBr">
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #D2691E;
-	border: 1px solid #696969;
-	padding: 5px;
-}
-
-QPushButton:pressed {
-	background-color: #DCDCDC;
-	border: 1px solid #696969;
-	padding: 5px;
-}</string>
-      </property>
-      <property name="text">
-       <string>)</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="1">
-     <widget class="QPushButton" name="ButtonAsin">
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #D2691E;
-	border: 1px solid #696969;
-	padding: 5px;
-}
-
-QPushButton:pressed {
-	background-color: #DCDCDC;
-	border: 1px solid #696969;
-	padding: 5px;
-}</string>
-      </property>
-      <property name="text">
-       <string>asin</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QLineEdit" name="xVal">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-     </widget>
-    </item>
     <item row="5" column="4">
      <widget class="QPushButton" name="Button6">
       <property name="styleSheet">
@@ -644,6 +422,135 @@ QPushButton:pressed {
       </property>
       <property name="text">
        <string>6</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1">
+     <widget class="QPushButton" name="ButtonAcos">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #D2691E;
+	border: 1px solid #696969;
+	padding: 5px;
+}
+
+QPushButton:pressed {
+	background-color: #DCDCDC;
+	border: 1px solid #696969;
+	padding: 5px;
+}</string>
+      </property>
+      <property name="text">
+       <string>acos</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="2">
+     <widget class="QPushButton" name="Button1">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #696969;
+	border: 1px solid #696969;
+	padding: 5px;
+}
+
+QPushButton:pressed {
+	background-color: #DCDCDC;
+	border: 1px solid #696969;
+	padding: 5px;
+}</string>
+      </property>
+      <property name="text">
+       <string>1</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="2">
+     <widget class="QPushButton" name="ButtonDiv">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #D2691E;
+	border: 1px solid #696969;
+	padding: 5px;
+}
+
+QPushButton:pressed {
+	background-color: #DCDCDC;
+	border: 1px solid #696969;
+	padding: 5px;
+}</string>
+      </property>
+      <property name="text">
+       <string>/</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="4">
+     <widget class="QLineEdit" name="lineEdit_5">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>Xmax =</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="xVal">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="3">
+     <widget class="QPushButton" name="Button5">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #696969;
+	border: 1px solid #696969;
+	padding: 5px;
+}
+
+QPushButton:pressed {
+	background-color: #DCDCDC;
+	border: 1px solid #696969;
+	padding: 5px;
+}</string>
+      </property>
+      <property name="text">
+       <string>5</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QPushButton" name="ButtonMod">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #D2691E;
+	border: 1px solid #696969;
+	padding: 5px;
+}
+
+QPushButton:pressed {
+	background-color: #DCDCDC;
+	border: 1px solid #696969;
+	padding: 5px;
+}</string>
+      </property>
+      <property name="text">
+       <string>mod</string>
       </property>
      </widget>
     </item>
@@ -667,27 +574,8 @@ QPushButton:pressed {
       </property>
      </widget>
     </item>
-    <item row="1" column="0">
-     <widget class="QLineEdit" name="DisplayX">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="text">
-       <string>X =</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="0">
-     <widget class="QPushButton" name="ButtonCos">
+    <item row="3" column="4">
+     <widget class="QPushButton" name="ButtonAdd">
       <property name="styleSheet">
        <string notr="true">QPushButton {
 	background-color: #D2691E;
@@ -702,27 +590,7 @@ QPushButton:pressed {
 }</string>
       </property>
       <property name="text">
-       <string>cos</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="2">
-     <widget class="QPushButton" name="Button4">
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #696969;
-	border: 1px solid #696969;
-	padding: 5px;
-}
-
-QPushButton:pressed {
-	background-color: #DCDCDC;
-	border: 1px solid #696969;
-	padding: 5px;
-}</string>
-      </property>
-      <property name="text">
-       <string>4</string>
+       <string>+</string>
       </property>
      </widget>
     </item>
@@ -752,11 +620,11 @@ QPushButton:pressed {
       </property>
      </widget>
     </item>
-    <item row="3" column="0">
-     <widget class="QPushButton" name="ButtonMod">
+    <item row="4" column="4">
+     <widget class="QPushButton" name="Button9">
       <property name="styleSheet">
        <string notr="true">QPushButton {
-	background-color: #D2691E;
+	background-color: #696969;
 	border: 1px solid #696969;
 	padding: 5px;
 }
@@ -768,12 +636,32 @@ QPushButton:pressed {
 }</string>
       </property>
       <property name="text">
-       <string>mod</string>
+       <string>9</string>
       </property>
      </widget>
     </item>
-    <item row="6" column="1">
-     <widget class="QPushButton" name="ButtonAtan">
+    <item row="4" column="3">
+     <widget class="QPushButton" name="Button8">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #696969;
+	border: 1px solid #696969;
+	padding: 5px;
+}
+
+QPushButton:pressed {
+	background-color: #DCDCDC;
+	border: 1px solid #696969;
+	padding: 5px;
+}</string>
+      </property>
+      <property name="text">
+       <string>8</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QPushButton" name="ButtonCos">
       <property name="styleSheet">
        <string notr="true">QPushButton {
 	background-color: #D2691E;
@@ -788,7 +676,159 @@ QPushButton:pressed {
 }</string>
       </property>
       <property name="text">
-       <string>atan</string>
+       <string>cos</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QPushButton" name="ButtonMul">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #D2691E;
+	border: 1px solid #696969;
+	padding: 5px;
+}
+
+QPushButton:pressed {
+	background-color: #DCDCDC;
+	border: 1px solid #696969;
+	padding: 5px;
+}</string>
+      </property>
+      <property name="text">
+       <string>*</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="1">
+     <widget class="QPushButton" name="ButtonPow">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #D2691E;
+	border: 1px solid #696969;
+	padding: 5px;
+}
+
+QPushButton:pressed {
+	background-color: #DCDCDC;
+	border: 1px solid #696969;
+	padding: 5px;
+}</string>
+      </property>
+      <property name="text">
+       <string>^</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="5">
+     <widget class="QPushButton" name="Button0_4">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #696969;
+	border: 1px solid #696969;
+	padding: 5px;
+}
+
+QPushButton:pressed {
+	background-color: #DCDCDC;
+	border: 1px solid #696969;
+	padding: 5px;
+}</string>
+      </property>
+      <property name="text">
+       <string>graph</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="0">
+     <widget class="QPushButton" name="ButtonOpenBr">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #D2691E;
+	border: 1px solid #696969;
+	padding: 5px;
+}
+
+QPushButton:pressed {
+	background-color: #DCDCDC;
+	border: 1px solid #696969;
+	padding: 5px;
+}</string>
+      </property>
+      <property name="text">
+       <string>(</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="4">
+     <widget class="QPushButton" name="ButtonX">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #D2691E;
+	border: 1px solid #696969;
+	padding: 5px;
+}
+
+QPushButton:pressed {
+	background-color: #DCDCDC;
+	border: 1px solid #696969;
+	padding: 5px;
+}</string>
+      </property>
+      <property name="text">
+       <string>X</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="2">
+     <widget class="QPushButton" name="ButtonLog">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #D2691E;
+	border: 1px solid #696969;
+	padding: 5px;
+}
+
+QPushButton:pressed {
+	background-color: #DCDCDC;
+	border: 1px solid #696969;
+	padding: 5px;
+}</string>
+      </property>
+      <property name="text">
+       <string>log</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="3">
+     <widget class="QPushButton" name="ButtonLn">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #D2691E;
+	border: 1px solid #696969;
+	padding: 5px;
+}
+
+QPushButton:pressed {
+	background-color: #DCDCDC;
+	border: 1px solid #696969;
+	padding: 5px;
+}</string>
+      </property>
+      <property name="text">
+       <string>ln</string>
       </property>
      </widget>
     </item>

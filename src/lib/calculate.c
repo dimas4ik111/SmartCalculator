@@ -31,7 +31,6 @@ double calculator_algorithm(list *stack, double X) {
     }
     while (work != NULL)
         pop(&work);
-    // printf("RESULT = %f\n", res);
     return res;
 }
 
@@ -86,6 +85,12 @@ double unary_calc(double a, int oper) {
             break;
         case UNARY_MIN:
             res = -a;
+            break;
+        case LN:
+            res = log(a);
+            break;
+        case LOG:
+            res = log10(a);
             break;
     }
     return res;

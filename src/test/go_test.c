@@ -116,6 +116,16 @@ START_TEST(t12) {
 }
 END_TEST
 
+START_TEST(t13) {
+    char *buf = (char*)calloc(256, sizeof(char));
+    double res = 0;
+    sprintf(buf, "ln(123)^log(321)-222");
+    s21_polish_notation(buf, &res, 0);
+    ck_assert_double_eq_tol(res, pow(log(123), log10(321))-222, 1e-6);
+    free(buf);
+}
+END_TEST
+
 Suite *tester(void) {
     Suite *s = suite_create("ALL");
     TCase *calculator;
@@ -133,6 +143,7 @@ Suite *tester(void) {
     tcase_add_test(calculator, t10);
     tcase_add_test(calculator, t11);
     tcase_add_test(calculator, t12);
+    tcase_add_test(calculator, t13);
     suite_add_tcase(s, calculator);
 
     return s;

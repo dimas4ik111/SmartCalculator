@@ -57,6 +57,10 @@ calculator::calculator(QWidget *parent)
             SLOT(OperChange()));
     connect(ui->ButtonX, SIGNAL(released()), this,
             SLOT(OperChange()));
+    connect(ui->ButtonLn, SIGNAL(released()), this,
+            SLOT(OperChange()));
+    connect(ui->ButtonLog, SIGNAL(released()), this,
+            SLOT(OperChange()));
 
     connect(ui->ButtonEqual, SIGNAL(released()), this,
             SLOT(Equal()));
@@ -140,6 +144,12 @@ void calculator::OperChange() {
         ui->Display->setText(ui->Display->text() + "sqrt");
     } else if (QString::compare(butVal, "X", Qt::CaseInsensitive) == 0) {
         ui->Display->setText(ui->Display->text() + "x");
+    } else if (QString::compare(butVal, "ln", Qt::CaseInsensitive) == 0) {
+        ui->Display->setText(ui->Display->text() + "ln");
+    } else if (QString::compare(butVal, "log", Qt::CaseInsensitive) == 0) {
+        ui->Display->setText(ui->Display->text() + "log");
+    } else if (QString::compare(butVal, "mod", Qt::CaseInsensitive) == 0) {
+        ui->Display->setText(ui->Display->text() + "%");
     }
 }
 
