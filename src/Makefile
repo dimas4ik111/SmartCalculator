@@ -17,22 +17,15 @@ calculator.a: $(OBJ) headers/polish_notation.h
 	ar rcs calculator.a $(OBJ)
 	ranlib calculator.a
 
-install: uninstall
-	qmake calculator.pro
-	make
-	rm -rf Makefile
-	cp copyMakefile/Makefile ./
+install:
+	cd calculator; qmake calculator.pro; make;
 
 uninstall: clean
-	rm -rf calculator.app
-	rm -rf .qmake.stash
-	rm -rf ./*.o
-	rm -rf ./*.h
-	rm -rf moc_*
-	rm -rf calculator/*.user
+	cd calculator; make clean; rm -rf ./calculator; rm -rf Makefile;
+	rm -rf calculator/.qmake.stash
 
 app:
-	open calculator.app
+	open calculator/calculator.app
 
 tests: calculator.a $(OBJ_TEST)
 	$(CC) $^ -lcheck -lgcov -o my_tests
