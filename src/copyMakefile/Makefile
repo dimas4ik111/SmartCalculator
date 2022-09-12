@@ -55,7 +55,7 @@ dist:
 	tar -czf CalcV1.tar.gz calculator copyMakefile headers lib Makefile main.c
 
 dvi:
-	
+	open doc.txt
 
 clean:
 	rm -rf *.out *.am calculator.a my_tests gcov_test

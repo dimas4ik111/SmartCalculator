@@ -1,0 +1,20 @@
+Calc V1.0  // osgreywi
+
+make install : build proj(app)
+make uninstall : delete all build files
+
+app name : calc.app
+
+In app you have small interface with buttons.
+
+On button equal you can calculate examples with variable 'x', but you must write in line after 'X = ' num, otherwise 'x = 0'.
+
+If example withou 'x', it is simple calculating example.
+
+For buil graphs you must enter the value of the xMin and xMax, otherwise graph's widow will nothing/
+
+Project struct:
+
+In dirrectory lib all '.c' files they realisation polish polish notation(calculating part).
+
+In dirrectory calculator all '.cpp' files for realisation GUI and graphs view.
