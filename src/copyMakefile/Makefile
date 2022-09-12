@@ -51,10 +51,17 @@ polish_notation_t.o: lib/polish_notation.c
 stack_t.o: lib/stack.c
 	@$(CC) $(CFLAGS) $(CFLAGS_T) -c $< -o $(OBJ_REP_DIR)$@
 
+dist:
+	tar -czf CalcV1.tar.gz calculator copyMakefile headers lib Makefile main.c
+
+dvi:
+	
+
 clean:
 	rm -rf *.out *.am calculator.a my_tests gcov_test
 	rm -rf lib/*.o test/*.o calculator/*.user
 	rm -rf report_obj/* *.gcov
 	rm -rf coverage.*
+	rm -rf CalcV1*
 
 .PHONY: all test clean
