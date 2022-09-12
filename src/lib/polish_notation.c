@@ -3,6 +3,9 @@
 int s21_polish_notation(char* str, double* result, double X) {
     if (str == NULL)
         return ERROR;
+    if (validation(str) == ERROR) {
+        return ERROR;
+    }
     int err = 0;
     int stop = strlen(str);
     list *work = NULL;
@@ -13,9 +16,15 @@ int s21_polish_notation(char* str, double* result, double X) {
     int br_counter = 0;
     int prev_oper = 1;
     for (int i = 0; i < stop;) {
-        if (*str == '(' || *str == ')')
+        if (*str == '(' || *str == ')') {
+            if (i == 0 && *str == ')') {
+                err = ERROR;
+            }
             br_counter++;
-        if (*str == 'x') {
+        }
+        if (err == ERROR) {
+            *result = 0;
+        } else if (*str == 'x') {
             push(&work, 0, 0, 999);
             x_counter++;
             str++;
@@ -30,14 +39,16 @@ int s21_polish_notation(char* str, double* result, double X) {
             prev_oper = 0;
         } else if (is_it_operand(str) > 0) {
             if (error_operand(str, i, stop - 1)) {
-                err = -1;
+                err = ERROR;
             } else {
                 if (*str == '-' && prev_oper == 1) {
                     err = work_with_oper(str, &work, &oper, 1);
                 } else {
                     err = work_with_oper(str, &work, &oper, 0);
                 }
-                prev_oper = 1;
+                if (*str != ')') {
+                    prev_oper = 1;
+                }
                 str += is_it_operand(str);
                 i += err;
                 oper_counter++;
@@ -49,10 +60,11 @@ int s21_polish_notation(char* str, double* result, double X) {
         } else if (*str == '\0') {
             i = stop;
         } else {
-            err = -1;
+            // printf("\n\nEXIT\n\n");
+            err = ERROR;
         }
 
-        if (err == -1) {
+        if (err == ERROR) {
             break;
         }
     }
@@ -62,12 +74,19 @@ int s21_polish_notation(char* str, double* result, double X) {
     }
     if (oper_counter == 0 && num_counter == 1 && x_counter == 1) {
         *result = X;
-    } else if (num_counter == 0 || br_counter % 2 != 0) {
-        err = -1;
+    } else if (br_counter % 2 != 0) {
+        err = ERROR;
         *result = 0;
+    } else if (num_counter == 1 && oper_counter == 0 && x_counter == 0) {
+        *result = peek_num(work);
     } else {
         *result = calculator_algorithm(work, X);
+        // print_polish(work);
     }
+    // while (work != NULL) {
+    //     pop(&work);
+    // }
+    
     return err;
 }
 
@@ -202,7 +221,7 @@ int is_it_operand(const char *str) {
 }
 
 int is_it_function(const char *str) {
-    int res = -1;
+    int res = 0;
     if (strncmp(str, "sin", 3) == 0) {
         res = 3;
     } else if (strncmp(str, "cos", 3) == 0) {
@@ -221,71 +240,71 @@ int is_it_function(const char *str) {
     return res;
 }
 
-void print_polish(list *head) {
-    printf("\n\nNOTATION:\n");
-    list *stack = NULL;
-    while (head) {
-        push(&stack, peek_num(head), peek_oper(head), peek_priority(head));
-        pop(&head);
-    }
-    while (stack) {
-        if (peek_oper(stack) == 0) {
-            if (peek_priority(stack) == 999) {
-                printf("x ");
-            } else {
-                printf("%d ", (int)peek_num(stack));
-                // printf("%f ", peek_num(stack));
-            }
-        } else {
-            switch(peek_oper(stack)) {
-                case PLUS:
-                    printf("+ ");
-                    break;
-                case MINUS:
-                    printf("- ");
-                    break;
-                case MUL:
-                    printf("* ");
-                    break;
-                case DIV:
-                    printf("/ ");
-                    break;
-                case MOD:
-                    printf("%% ");
-                    break;
-                case SIN:
-                    printf("sin ");
-                    break;
-                case COS:
-                    printf("cos ");
-                    break;
-                case TAN:
-                    printf("tan ");
-                    break;
-                case ASIN:
-                    printf("asin ");
-                    break;
-                case ACOS:
-                    printf("acos ");
-                    break;
-                case ATAN:
-                    printf("atan ");
-                    break;
-                case POW:
-                    printf("^ ");
-                    break;
-                case SQRT:
-                    printf("sqrt ");
-                    break;
-                case UNARY_MIN:
-                    printf("~ ");
-                    break;
-            }
-        }
-        pop(&stack);
-    }
-    printf("\n");
-}
+// void print_polish(list *head) {
+//     printf("\n\nNOTATION:\n");
+//     list *stack = NULL;
+//     while (head) {
+//         push(&stack, peek_num(head), peek_oper(head), peek_priority(head));
+//         pop(&head);
+//     }
+//     while (stack) {
+//         if (peek_oper(stack) == 0) {
+//             if (peek_priority(stack) == 999) {
+//                 printf("x ");
+//             } else {
+//                 printf("%d ", (int)peek_num(stack));
+//                 // printf("%f ", peek_num(stack));
+//             }
+//         } else {
+//             switch(peek_oper(stack)) {
+//                 case PLUS:
+//                     printf("+ ");
+//                     break;
+//                 case MINUS:
+//                     printf("- ");
+//                     break;
+//                 case MUL:
+//                     printf("* ");
+//                     break;
+//                 case DIV:
+//                     printf("/ ");
+//                     break;
+//                 case MOD:
+//                     printf("%% ");
+//                     break;
+//                 case SIN:
+//                     printf("sin ");
+//                     break;
+//                 case COS:
+//                     printf("cos ");
+//                     break;
+//                 case TAN:
+//                     printf("tan ");
+//                     break;
+//                 case ASIN:
+//                     printf("asin ");
+//                     break;
+//                 case ACOS:
+//                     printf("acos ");
+//                     break;
+//                 case ATAN:
+//                     printf("atan ");
+//                     break;
+//                 case POW:
+//                     printf("^ ");
+//                     break;
+//                 case SQRT:
+//                     printf("sqrt ");
+//                     break;
+//                 case UNARY_MIN:
+//                     printf("~ ");
+//                     break;
+//             }
+//         }
+//         pop(&stack);
+//     }
+//     printf("\n");
+// }
 
 int error_operand(const char *buf, int i, int stop_val) {
     int res = 0;
@@ -293,6 +312,63 @@ int error_operand(const char *buf, int i, int stop_val) {
         res = 1;
     } else if (i == stop_val && *buf != ')') {
         res = 1;
+    }
+    return res;
+}
+
+int validation(char *str) {
+    if (strlen(str) > 255) {
+        return ERROR;
+    }
+    int res = 0;
+    char *buf = NULL;
+    buf = (char*)calloc(strlen(str) + 1, sizeof(char));
+    *buf = '\0';
+    while (*str != '\0') {
+        if (*str == ' ') {
+            str++;
+        } else if (*str == '(') {
+            if (*buf == ')' || is_it_num(buf) > 0) {
+                res = ERROR;
+            }
+            buf = str;
+            str++;
+        } else if (*str == ')') {
+            if (*buf == '(') {
+                res = ERROR;
+            }
+            if (is_it_operand(buf) > 0 && *buf != ')') {
+                // printf("\n\nEXIT\n\n");
+                res = ERROR;
+            }
+            buf = str;
+            str++;
+        } else if (is_it_operand(str) > 0) {
+            if (is_it_operand(buf) > 0 && *str != '-' && *buf != ')' && is_it_function(str) == 0) {
+                res = ERROR;
+            }
+            buf = str;
+            str += is_it_operand(str);
+        } else if (is_it_num(str) > 0 || *str == 'x') {
+            if (*buf == ')') {
+                res = ERROR;
+            }
+            buf = str;
+            if (*str == 'x') {
+                str++;
+            } else {
+                str += is_it_num(str);
+            }
+        } else {
+            res = ERROR;
+        }
+        if (*str == '\0' && is_it_operand(buf) > 0 && *buf != ')') {
+            res = ERROR;
+        }
+        // printf("str = %s   buf = %s\n", str, buf);
+        if (res == ERROR) {
+            break;
+        }
     }
     return res;
 }

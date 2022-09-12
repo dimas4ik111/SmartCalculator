@@ -17,10 +17,12 @@ void push_num(char* str, list **work, int len, int unary_minus);
 int work_with_oper(const char *str, list **work, list **oper, int unary_minus);
 int priority_oper(char *buf);
 int wich_opearnd(char* buf);
-void print_polish(list *stack);
 int error_operand(const char *buf, int i, int stop_val);
 double calculator_algorithm(list *stack, double X);
 double binary_calc(double a, double b, int oper);
 double unary_calc(double a, int oper);
+int validation(char *str);
 
+// debug func
+// void print_polish(list *stack);
 #endif  // SRC_HEADERS_POLISH_NOTATION_H_

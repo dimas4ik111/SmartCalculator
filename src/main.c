@@ -19,6 +19,7 @@ int main() {
         return 0;
     }
     printf("num = %f\n", num);
+    // printf("VALID = %d\n", validation(buf));
     free(buf);
     return 0;
 }
