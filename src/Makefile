@@ -18,7 +18,7 @@ calculator.a: $(OBJ) headers/polish_notation.h
 	ranlib calculator.a
 
 install: uninstall
-	qmake calculator/calculator.pro
+	qmake calculator.pro
 	make
 	rm -rf Makefile
 	cp copyMakefile/Makefile ./
