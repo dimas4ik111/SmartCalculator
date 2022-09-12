@@ -23,7 +23,7 @@ install: uninstall
 	rm -rf Makefile
 	cp copyMakefile/Makefile ./
 
-uninstall:
+uninstall: clean
 	rm -rf calculator.app
 	rm -rf .qmake.stash
 	rm -rf ./*.o
@@ -51,7 +51,7 @@ polish_notation_t.o: lib/polish_notation.c
 stack_t.o: lib/stack.c
 	@$(CC) $(CFLAGS) $(CFLAGS_T) -c $< -o $(OBJ_REP_DIR)$@
 
-clean :
+clean:
 	rm -rf *.out *.am calculator.a my_tests gcov_test
 	rm -rf lib/*.o test/*.o calculator/*.user
 	rm -rf report_obj/* *.gcov
