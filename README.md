@@ -5,7 +5,10 @@ simple Calculator app with c/c++ and QTcreater
  cd src/
  make install
 
+
 for MacOS: cd calculator, open calc
+
+
 for Linux: open dir calculator,
            find app calculator and open them
 ---------------
