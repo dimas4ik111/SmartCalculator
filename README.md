@@ -1,5 +1,5 @@
 # SmartCalcularot
-simple Calculator app with c/c++ and QTcreater
+# Calculator app with c/c++ and QTcreater
 
  For start app:
  cd src/
